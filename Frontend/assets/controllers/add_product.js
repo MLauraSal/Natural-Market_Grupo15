@@ -12,7 +12,7 @@ form.addEventListener("submit", (e)=>{
     
     productServices.crearNuevoProducto(img, name, price, description, stock)
     .then(()=>{
-        window.location.href = "../../pages/admin.html"
+        window.location.href = "/pages/admin.html"
     }).catch(err => console.log(err));
 })
 
