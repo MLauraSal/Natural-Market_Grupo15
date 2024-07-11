@@ -17,6 +17,7 @@ const crearNuevoProducto = (img, name, price, description, stock, id) => {
         <div>
           <h2 class="product-title">${name}</h2>
           <span class="product-price">${price}</span>
+         
         </div>
         <a href="/pages/product.html" class="btn_product">Ver producto</a>
       </div>

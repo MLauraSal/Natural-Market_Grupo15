@@ -14,7 +14,7 @@ export const productServices = {
     allProducts: () => fetchData(BASE_API_URL),
 
 
-    crearNuevoProducto: (img, name, price, description, stock) => {
+    crearNuevoProducto: (img, name, price, description, stock, id) => {
       
       return fetchData(BASE_API_URL, {
         method: "POST",

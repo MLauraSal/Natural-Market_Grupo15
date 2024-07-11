@@ -1,4 +1,4 @@
-import { productServices } from "../../services/product-service.js";
+import { productServices } from "../../index.js";
 
 
 const obtenerDatos = async()=>{

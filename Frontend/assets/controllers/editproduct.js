@@ -8,7 +8,7 @@ const obtenerInfo = async() => {
 	const id = urlProduct.searchParams.get("id");
 
 	
-    const img = document.querySelector("[data-url]");
+    const img = document.querySelector("[data-img]");
 	const stock = document.querySelector("[data-stock]");
 	const name = document.querySelector("[data-name]");
 	const price = document.querySelector("[data-price]");
@@ -26,12 +26,12 @@ obtenerInfo();
 
 
 
-form.addEventListener("submit", (event)=>{
-    event.preventDefault();
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();
     const urlProduct = new URL(window.location);
 	const id = urlProduct.searchParams.get("id");
 
-    const img = document.querySelector("[data-url]").value;
+    const img = document.querySelector("[data-img]").value;
 	const stock = document.querySelector("[data-stock]").value;
 	const name = document.querySelector("[data-name]").value;
 	const price = document.querySelector("[data-price]").value;
