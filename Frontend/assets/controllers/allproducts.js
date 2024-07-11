@@ -19,7 +19,7 @@ const crearNuevoProducto = (img, name, price, description, stock, id) => {
           <span class="product-price">${price}</span>
          
         </div>
-        <a href="/pages/product.html" class="btn_product">Ver producto</a>
+        <a href="product.html" class="btn_product">Ver producto</a>
       </div>
     `;
     tarjeta.innerHTML = contenido;

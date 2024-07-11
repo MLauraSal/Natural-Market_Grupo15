@@ -38,7 +38,7 @@ form.addEventListener("submit", (e)=>{
 	const description = document.querySelector("[data-description]").value;
     productServices.actualizarProducto(img, stock, name, price, description,id)
     .then(()=>{
-        window.location.href = "../../pages/exito_eliminar.html"
+        window.location.href = "./pages/exito.html"
     });
 
 })

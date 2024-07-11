@@ -14,7 +14,7 @@ const crearNuevoProducto = (img, name, price, description, id) => {
         <span class="product-price">${price}</span>
       </div>
       <div class="editar__container">
-        <a href="/pages/editproduct.html" class="editaricono">
+        <a href="editproduct.html" class="editaricono">
           <i class="fa-solid fa-pencil"></i>
         </a>
         <button type="button" class="eliminar__icono" id="${id}">
@@ -30,7 +30,7 @@ const crearNuevoProducto = (img, name, price, description, id) => {
     const id = btnEliminar.id;
     productServices.eliminarProducto(id)
       .then(() => {
-        window.location.href = "../../pages/exito-eliminar.html";
+        window.location.href = "./pages/exito-eliminar.html";
       })
       .catch(err => console.log("Ocurrió un error:", err));
   });
