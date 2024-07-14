@@ -1,4 +1,4 @@
-import { productServices } from "../../services/product-service.js";
+import { productServices } from "../../index.js";
 
 
 const obtenerDatos = async()=>{
@@ -9,12 +9,14 @@ const obtenerDatos = async()=>{
     const name = document.querySelector("[data-name]");
     const price = document.querySelector("[data-price]");
     const description = document.querySelector("[data-description]");
+   
     /* Inyectamos el contenido mediante DOM */    
     const productos = await productServices.productId(id)
         img.src = productos.img;
         name.textContent =productos.name;
         price.textContent = productos.price;
-        description.textContent = productos.description
+        description.textContent = productos.description;
+        
 }
 obtenerDatos();
 

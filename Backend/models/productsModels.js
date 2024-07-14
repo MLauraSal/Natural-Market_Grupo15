@@ -1,35 +1,53 @@
+// models/Producto.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db/db.js');
+const Categoria = require('./categoriasModels.js');
+const Proveedor = require('./proveedoresModel.js');
 
-const Product = sequelize.define('Product', {
-    id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-    },
-    name: {
-        type: DataTypes.STRING(45),
-        allowNull: false
-    },
-    img: {
-        type: DataTypes.TEXT,
-        allowNull: false
-    },
-    description: {
-        type: DataTypes.TEXT,
-        allowNull: false
-    },
-    price: {
-        type: DataTypes.DECIMAL(10, 2),
-        allowNull: false
-    },
-    stock: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+const Producto = sequelize.define('Producto', {
+  id_producto: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
+  nombre: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  img: {
+    type: DataTypes.TEXT
+  },
+  descripcion: {
+    type: DataTypes.TEXT
+  },
+  precio: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: false
+  },
+  stock: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  id_categoria: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: Categoria,
+      key: 'id_categoria'
     }
+  },
+  id_proveedor: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: Proveedor,
+      key: 'id_proveedor'
+    }
+  }
 }, {
-    tableName: 'productos',
-    timestamps: false
+  tableName: 'Productos',
+  timestamps: false
 });
 
-module.exports = Product;
+Producto.belongsTo(Categoria, { foreignKey: 'id_categoria' });
+Producto.belongsTo(Proveedor, { foreignKey: 'id_proveedor' });
+
+module.exports = Producto;

@@ -1,6 +1,6 @@
 const { Sequelize} = require('sequelize');
 
-const sequelize = new Sequelize('naturalmarket_db', 'root', '', {
+const sequelize = new Sequelize('db_naturalmarket', 'root', '', {
     host: 'localhost',
     dialect: 'mysql',
     logging: false, // Desactiva el logging

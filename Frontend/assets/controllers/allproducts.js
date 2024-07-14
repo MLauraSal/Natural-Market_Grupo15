@@ -6,7 +6,7 @@ import { productServices } from "../../index.js";
 
 
 // Función para crear la tarjeta de producto en el DOM
-const crearNuevoProducto = (img, name, price, description, stock, id) => {
+const crearNuevoProducto = (img, name, price, description, id) => {
     const tarjeta = document.createElement("div");
     tarjeta.classList.add("list");
     const contenido = `
@@ -16,6 +16,7 @@ const crearNuevoProducto = (img, name, price, description, stock, id) => {
         </div>
         <div>
           <h2 class="product-title">${name}</h2>
+          
           <span class="product-price">${price}</span>
         </div>
         <a href="/pages/product.html" class="btn_product">Ver producto</a>
@@ -31,13 +32,13 @@ const seccionAll = document.querySelector('[data-products]');
   // Usa la función allProducts del servicio para obtener todos los productos
   productServices.allProducts()
     .then((data) => {
-      data.forEach(({ img, name, price, description, stock, id }) => {
+      data.forEach(({ img, name, price, description,  id }) => {
         const nuevaTarjeta = crearNuevoProducto(
           img,
           name,
           price,
           description,
-          stock,
+          
           id
         );
         seccionAll.appendChild(nuevaTarjeta);

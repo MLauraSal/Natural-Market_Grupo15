@@ -15,10 +15,11 @@ const crearNuevoProducto = (img, name, price, description, id) => {
                 <div>
                     <h2  class="product-title">${name}</h2>
                     <p  class="product-title">${description}</p>
+                 
                     <span class="product-price">${price}</span>
                 </div>
                 <div class="editar__container">
-                    <a href="../../pages/editproduct.html?id=${id}" class="editaricono" ">
+                    <a href="../../pages/editproduct.html?id=${id}" class="editaricono" " class="editaricono" ">
                        <i class="fa-solid fa-pencil"></i>
                     </a>
                     <button type="button" class="eliminar__icono" id="${id}">
@@ -31,6 +32,7 @@ const crearNuevoProducto = (img, name, price, description, id) => {
         tarjeta.innerHTML = contenido;
 
         const btneliminar = tarjeta.querySelector("eliminar__icono")
+        
         btneliminar.addEventListener("click", ()=>{
             const id = btneliminar.id;
             productServices.eliminarProducto(id)
@@ -44,13 +46,13 @@ const crearNuevoProducto = (img, name, price, description, id) => {
 
 const seccionAll = document.querySelector('[data-products]');
 productServices.allProducts().then((data) => {
-	data.forEach(({img, name, price, description, stock, id}) => {
+	data.forEach(({img, name, price, description, id}) => {
 		const nuevoTarjeta = crearNuevoProducto(
             img,
             name,
 			price,
             description,
-			stock,
+			category,
 			id
 		);
 		seccionAll.appendChild(nuevoTarjeta);

@@ -9,14 +9,14 @@ const obtenerInfo = async() => {
 
 	
     const img = document.querySelector("[data-url]");
-	const stock = document.querySelector("[data-stock]");
+	
 	const name = document.querySelector("[data-name]");
 	const price = document.querySelector("[data-price]");
 	const description = document.querySelector("[data-description]");
 
     const producto = await productServices.detalleProducto(id);
 		img.value = producto.img
-		stock.value = producto.stock
+		
 		name.value = producto.name
 		price.value = producto.price
 		description.value = producto.description
@@ -32,13 +32,13 @@ form.addEventListener("submit", (event)=>{
 	const id = urlProduct.searchParams.get("id");
 
     const img = document.querySelector("[data-url]").value;
-	const stock = document.querySelector("[data-stock]").value;
+	const category = document.querySelector("[data-category]").value;
 	const name = document.querySelector("[data-name]").value;
 	const price = document.querySelector("[data-price]").value;
 	const description = document.querySelector("[data-description]").value;
     productServices.actualizarProducto(img, stock, name, price, description,id)
     .then(()=>{
-        window.location.href = "../../pages/exito_eliminar.html"
+        window.location.href = "../../pages/exito.html"
     });
 
 })
