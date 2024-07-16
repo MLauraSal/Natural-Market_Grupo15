@@ -59,6 +59,7 @@
             <div class="product__box">
                 <form class="product__form"  data-form>
                     <h1 class="heading">Agregar<span>Producto</span></h1>
+
                     <div class="input__container ">
                         <label for="">Url de imagen</label>
                         <input class="product__img" type="text" placeholder="https://example.com/my-img.png"  required data-img>
@@ -66,21 +67,31 @@
                     
                     <div class="input__container">
                         <label for="">Nombre del producto</label>
-                        <input class="product__name" type="text" name="name" data-name>
+                        <input class="product__name" type="text" name="nombre" data-nombre>
                     </div>
-                    
+
                     <div class="input__container">
                         <label for="">Descripción del producto</label>
-                        <textarea class="product__description" name="description" cols="30" rows="10" data-description></textarea>
+                        <textarea class="product__description" name="descripcion" cols="30" rows="10" data-descripcion></textarea>
                     </div>
                     
                     <div class="input__container">
                         <label for="price">Precio del producto</label>
-                        <input class="product__price" type="text" required placeholder="$200.00" data-price>
+                        <input class="product__price" type="text" required placeholder="$200.00" data-precio>
                     </div>
                     <div class="input__container">
                         <label for="">Stock</label>
-                        <input class="product__Stock" type="text" name="product" required placeholder="" data-stock>
+                        <input class="product__Stock" type="text" name="stock" required placeholder="Stock" data-stock>
+                    </div>
+
+                    <div class="input__container">
+                        <label for="">Categoria</label>
+                        <input class="product__name" type="text" name="categori" data-categoria>
+                    </div>
+
+                    <div class="input__container">
+                        <label for="">Proveedor</label>
+                        <input class="producto__name" type="text" name="name" data-name>
                     </div>
                     <input class="input__btn btn" type="submit" value="Agregar producto">
                 </form>

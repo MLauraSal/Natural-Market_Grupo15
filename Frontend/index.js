@@ -1,6 +1,5 @@
-const BASE_API_URL = "http://localhost:3000/api/products";
+const BASE_API_URL = "http://localhost:3000/api/productos";
 
-<<<<<<< HEAD
 const fetchData = async (url, options = {}) => {
   const response = await fetch(url, options);
   if (!response.ok) {
@@ -16,14 +15,14 @@ export const productServices = {
   allProducts: () => fetchData(BASE_API_URL),
 
 
-  crearNuevoProducto: (img, name, price, description) => {
+  crearNuevoProducto: (img, nombre, precio, descripcion, categoria, proveedor, stock, id) => {
 
     return fetchData(BASE_API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ img, name, price, description, id }),
+      body: JSON.stringify({ img, nombre, precio, descripcion, categoria, proveedor, stock, id }),
     });
   },
   eliminarProducto: (id) => fetchData(`${BASE_API_URL}/${id}`, { method: "DELETE" }),
@@ -31,56 +30,15 @@ export const productServices = {
 
   detalleProducto: (id) => fetchData(`${BASE_API_URL}/${id}`),
 
-  actualizarProducto: (img, name, price, description, id) => {
+  actualizarProducto: (img, nombre, precio, descripcion, categoria, proveedor, stock, id) => {
     return fetchData(`${BASE_API_URL}/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ img, name, price, description, id }),
+      body: JSON.stringify({ img, nombre, precio, descripcion, categoria, proveedor, stock, id }),
     });
   },
  
-=======
-    const fetchData = async (url, options = {}) => {
-      const response = await fetch(url, options);
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return await response.json();
-    };
-
-export const productServices = {
-
-
-    allProducts: () => fetchData(BASE_API_URL),
-
-
-    crearNuevoProducto: (img, name, price, description, stock, id) => {
-      
-      return fetchData(BASE_API_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ img, name, price, description, stock, id }),
-      });
-    },
-    eliminarProducto: (id) => fetchData(`${BASE_API_URL}/${id}`, { method: "DELETE" }),
-
-
-    detalleProducto: (id) => fetchData(`${BASE_API_URL}/${id}`),
-
-    actualizarProducto: (img, stock, name, price, description, id) => {
-      return fetchData(`${BASE_API_URL}/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ img, stock, name, price, description, id }),
-      });
-    },
-    
->>>>>>> e035341d2255b4124984629531ac39a920bf9b35
 };
 

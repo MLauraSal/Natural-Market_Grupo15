@@ -6,16 +6,16 @@ const obtenerDatos = async()=>{
     const id = url.searchParams.get("id");
     /* obtenemos los elementos de nuestra card mediante querySelector */
     const img = document.querySelector("[data-img]");
-    const name = document.querySelector("[data-name]");
-    const price = document.querySelector("[data-price]");
-    const description = document.querySelector("[data-description]");
+    const nombre = document.querySelector("[data-nombre]");
+    const precio = document.querySelector("[data-precio]");
+    const descripcion = document.querySelector("[data-descripcion]");
    
     /* Inyectamos el contenido mediante DOM */    
     const productos = await productServices.productId(id)
         img.src = productos.img;
-        name.textContent =productos.name;
-        price.textContent = productos.price;
-        description.textContent = productos.description;
+        nombre.textContent = productos.nombre;
+        precio.textContent = productos.precio;
+        descripcion.textContent = productos.descripcion;
         
 }
 obtenerDatos();
