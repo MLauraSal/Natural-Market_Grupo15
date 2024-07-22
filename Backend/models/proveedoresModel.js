@@ -15,9 +15,6 @@ const Proveedor = sequelize.define('Proveedor', {
   contacto: {
     type: DataTypes.STRING
   },
-  telefono: {
-    type: DataTypes.STRING
-  },
   email: {
     type: DataTypes.STRING
   }

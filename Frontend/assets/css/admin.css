@@ -1,3 +1,23 @@
+/*-------------------------*\
+  #VARIABLES
+\*-----------------------------------*/
+
+:root {
+    --green-color: #3cb815;
+    --orange-color: #ff7e00;
+    --light-orange-color: #f3a95f;
+    --light-color: #666;
+    --black: #130f40;
+    --text-color: #1a2428;
+    --bg-color: #ffffff;
+
+    --box-shadow-1: 0 0.5rem 1.5rem rgba(0, 0, 0.1);
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0.1);
+    
+    --border: .2rem solid rgba(0, 0, 0, 0.1);
+    --outline: .1rem solid rgba(0, 0, 0, 0.1);
+    
+}
 
 /*-----------------------------------*\
   #GOOGLE FONTS
@@ -92,34 +112,15 @@ body {
 #home-btn i{
     color: var(--green-color);
 }
-/*--------------------------*\
-  #VARIABLES
-\*-----------------------------------*/
-
-:root {
-    --green-color: #3cb815;
-    --orange-color: #ff7e00;
-    --light-orange-color: #f3a95f;
-    --light-color: #666;
-    --black: #130f40;
-    --text-color: #1a2428;
-    --bg-color: #ffffff;
-
-    --box-shadow-1: 0 0.5rem 1.5rem rgba(0, 0, 0.1);
-    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0.1);
-    
-    --border: .2rem solid rgba(0, 0, 0, 0.1);
-    --outline: .1rem solid rgba(0, 0, 0, 0.1);
-    
-}
 
 
-.tables {
+.responsive-table{
     width: 100%;
     display: grid;
     justify-content: center;
     align-items: center;
     padding: 0 20px 20px 20px;
+    margin-left: 5rem;
 }
 
 
@@ -133,10 +134,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-right: 2rem;
 }   
 .heading h2 {
     font-size: 3rem;
     color: var(--green-color);
+    margin-left: 5rem;
 }
 
 .heading .btn {

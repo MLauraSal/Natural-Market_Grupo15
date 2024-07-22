@@ -1,7 +1,7 @@
 const { Sequelize} = require('sequelize');
 
-const sequelize = new Sequelize('db_naturalmarket', 'root', 'root', {
-    host: 'localhost',
+const sequelize = new Sequelize('marianasal123_db_naturalmarket', '366465_mls', 'catalogo2020', {
+    host: 'mysql-marianasal123.alwaysdata.net',
     dialect: 'mysql',
     logging: false, // Desactiva el logging
 });

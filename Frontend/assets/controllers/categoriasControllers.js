@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const formCategoria = document.getElementById('formCategoria');
-        const nombre = document.getElementById('nombre');
+        const nombre_categoria = document.getElementById('nombre_categoria');
         const descripcion = document.getElementById('descripcion');
         
 
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (btnAdd) {
             btnAdd.addEventListener('click', () => {
                 const nuevaCategoria = {
-                    nombre: nombre.value,
+                    nombre_categoria: nombre_categoria.value,
                     descripcion: descripcion.value
                     
                 };
@@ -79,14 +79,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 const fila = document.createElement('tr');
                 fila.innerHTML = `
                     <td>${categoria.id_categoria}</td>
-                    <td>${categoria.nombre}</td>
+                    <td>${categoria.nombre_categoria}</td>
                     <td>${categoria.descripcion}</td>
                     
                     <td>
                        
                         
-                        <button class="btn btn-primary modificar-btn"></button>
-                        <button class="btn btn-danger eliminar-btn"></button>
+                       <button class="btn modificar-btn"><i class="far fa-edit modificar-btn"></i></button>
+                        <button class="btn  eliminar-btn"><i class="far fa-trash-alt eliminar-btn "></i></button>
                     </td>
                 `;
                 fila.id = `categoria-${categoria.id_categoria}`;
@@ -105,11 +105,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.json();
             })
             .then(categoria => {
-                const nombreInput = document.getElementById('nombre');
+                const nombreInput = document.getElementById('nombre_categoria');
                 const descripcionInput = document.getElementById('descripcion');
                 
 
-                nombreInput.value = categoria.nombre;
+                nombreInput.value = categoria.nombre_categoria;
                 descripcionInput.value = categoria.descripcion;
 
                 const btnAdd = document.getElementById('btnAdd');

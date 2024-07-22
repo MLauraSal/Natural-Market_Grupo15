@@ -13,16 +13,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const formProveedor = document.getElementById('formProveedor');
-        const nombre = document.getElementById('nombre');
-        const telefono = document.getElementById('telefono');
+        const nombre = document.getElementById('nombre_proveedor');
+        const contacto = document.getElementById('contacto');
         const email = document.getElementById('email');
 
         const btn_Add = document.getElementById('btn_Add');
         if (btn_Add) {
             btn_Add.addEventListener('click', () => {
                 const nuevoProveedor = {
-                    nombre: nombre.value,
-                    telefono: telefono.value,
+                    nombre: nombre_proveedor.value,
+                    contacto: contacto.value,
                     email: email.value
                     
                 };
@@ -76,15 +76,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 const fila = document.createElement('tr');
                 fila.innerHTML = `
                     <td>${proveedor.id_proveedor}</td>
-                    <td>${proveedor.nombre}</td>
-                    <td>${proveedor.telefono}</td>
+                    <td>${proveedor.nombre_proveedor}</td>
+                    <td>${proveedor.contacto}</td>
                     <td>${proveedor.email}</td>
                     
                     <td>
                        
                         
-                        <button class="btn btn-primary modificar-btn"></button>
-                        <button class="btn btn-danger eliminar-btn"></button>
+                        <button class="btn modificar-btn"><i class="far fa-edit modificar-btn"></i></button>
+                        <button class="btn  eliminar-btn"><i class="far fa-trash-alt eliminar-btn "></i></button>
                     </td>
                 `;
                 fila.id = `proveedor-${proveedor.id_proveedor}`;
@@ -103,22 +103,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.json();
             })
             .then(proveedor => {
-                const nombreInput = document.getElementById('nombre');
-                const telefonoInput = document.getElementById('telefono');
+                const nombreInput = document.getElementById('nombre_proveedor');
+                const contactoInput = document.getElementById('contacto');
                 const emailInput = document.getElementById('email');
                
                 
 
-                nombreInput.value = proveedor.nombre;
-                telefonoInput.value = proveedor.telefono;
+                nombreInput.value = proveedor.nombre_proveedor;
+                contactoInput.value = proveedor.contacto;
                 emailInput.value = proveedor.email;
 
                 
                 const btn_Add = document.getElementById('btn_Add');
                 btn_Add.onclick = () => {
                     const proveedorActualizado = {
-                        nombre: nombreInput.value,
-                        telefono: telefonoInput.value,
+                        nombre_proveedor: nombreInput.value,
+                        contacto: contactoInput.value,
                        email: emailInput.value
                         
                     };

@@ -12,7 +12,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         errorMsg.textContent = '';
         alert('Inicio de sesión exitoso!');
         // Redirige a la página de administración
-        window.location.href = './pages/admin.html';
+        window.location.href = 'pages/adminPanel.html';
     } else {
         errorMsg.textContent = 'Email o contraseña incorrectos';
     }

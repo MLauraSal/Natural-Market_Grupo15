@@ -59,14 +59,15 @@
             <label for="search-box" class="fas fa-search"></label>
         </form>
 
-        <form action="#" class="login-form">
-            <h3>Login</h3>
-            <input type="email" placeholder="Email registrado" class="box">
-            <input type="password" placeholder="Contraseña" class="box">
-            <p>¿No estas registrado/a?<a href="../pages/contact.html"> Crea tu cuenta </a></p>
-            <input type="submit" value="Login" class="btn">
-    
-        </form>
+       <!--Login-->
+       <form action="#" class="login-form" id="loginForm">
+        <h3>Login</h3>
+        <input type="email" placeholder="Email registrado" class="box" id="email" required>
+        <input type="password" placeholder="Contraseña" class="box" id="password" required>
+        <p>¿No estas registrado/a? <a href="pages/contact.html">Crea tu cuenta</a></p>
+        <input type="submit" value="Login" class="btn">
+        <p id="errorMsg"></p>
+    </form>
     </header>
 
     <!---------- MAIN ---------->
@@ -159,6 +160,7 @@
     <!-- Link JS -->
     <script src="../assets/js/scripts.js"></script>
     <script src="../assets/js/contact.js"></script>
+    <script src="../assets/js/loginAdmin.js"></script>
     <!-- Font awesome JS -->
     <script src="https://kit.fontawesome.com/70afb11fe8.js" crossorigin="anonymous"></script>
   </body>
